@@ -1,0 +1,50 @@
+:host {
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+}
+
+#inner-page-container {
+    width: 100%;
+    height: 100%;
+    .page-header, .page-footer {
+        height: 50px;
+    }
+
+    .page-body {
+        flex: 1;
+        background-color: aquamarine;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    #workbook-data-area {
+        background: pink;
+        display:block;
+        overflow: auto;
+        flex: 1;
+    }
+
+    .workbooks-tabs-header {
+        height: 65px;
+        background-color: aqua;
+    }
+
+    .left {
+        overflow: hidden;
+        overflow-y: auto;
+        box-sizing: border-box;
+        border: 4px solid;
+    }
+
+    #add-new-workbook-area {
+        width: 80px;
+        background-color: red;
+    }
+
+    #tabs-scroller-area {
+        flex: 1;
+        background-color: azure;
+    }
+}
+

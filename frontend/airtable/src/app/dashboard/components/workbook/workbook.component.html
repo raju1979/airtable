@@ -1,0 +1,27 @@
+<div id="inner-page-container" class="d-flex flex-direction-column">
+    <div id="inner-page-container" class="d-flex flex-column">
+        <div class="page-header">
+            <h2>{{activeWorkbook?.title}}</h2>
+        </div>
+        <div class="workbooks-tabs-header w-100 p-1 d-flex">
+            <div id="add-new-workbook-area" class="me-1"></div>
+            <div id="tabs-scroller-area">
+                
+            </div>
+        </div>
+        <div class="page-body">
+            <p-splitter [style]="{'height': '100%'}" [panelSizes]="[20,80]">
+                <ng-template pTemplate>
+                    <div class="left w-100 h-100 bg-dark p-1">
+                        left side
+                    </div>
+                </ng-template>
+                <ng-template pTemplate>
+                    <div class="right p-1">
+                        right side
+                    </div>
+                </ng-template>
+            </p-splitter>
+        </div>
+        <div class="page-footer">c</div>
+    </div>

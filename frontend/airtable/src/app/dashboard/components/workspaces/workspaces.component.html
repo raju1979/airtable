@@ -1,0 +1,19 @@
+<div class="page-container w-100 h-100">
+    <ng-container *ngFor="let workspace of workspaces; let i = index;">
+        <section>
+            <h1>{{workspace.title}}</h1>
+            <div class="workbooks-container d-flex w-100 p-2">
+                <ng-container *ngFor="let workbook of workspace.workbooks">
+                    <a [routerLink]="['../workbook', workbook.id]" class="d-inline-block mr-2" [style.margin-right]="'20px'">
+                        <button class="me-2" pButton pRipple type="button" [label]="workbook.title" class="p-button-rounded"></button>
+                    </a>
+                    
+                </ng-container>
+                <div class="add-workbook-container">
+                    <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded" (click)="addWorkbook(workspace)"></button>
+                </div>
+            </div>
+        </section>
+        <hr  class="mb-4"/>
+    </ng-container>
+</div>

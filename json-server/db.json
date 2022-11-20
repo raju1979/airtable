@@ -1,0 +1,122 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Pankaj",
+      "salary": "10000"
+    },
+    {
+      "name": "David",
+      "salary": "5000",
+      "id": 2
+    }
+  ],
+  "workspaces": [
+    {
+      "id": "63788f5d77c7ef075c47069d",
+      "title": "Workspace-1",
+      "properties": {
+        "icon": "home",
+        "background": "#cecece"
+      },
+      "workbooks": []
+    },
+    {
+      "id": "63788f701130208924cdf7de",
+      "title": "Workspace-2",
+      "properties": {
+        "icon": "home",
+        "background": "#cecece"
+      },
+      "workbooks": []
+    },
+    {
+      "id": "63788f82c43dd1a84886a3dc",
+      "title": "Workspace-3",
+      "properties": {
+        "icon": "home",
+        "background": "#cecece"
+      },
+      "workbooks": []
+    }
+  ],
+  "workbooks": [
+    {
+      "_id": "9b7f39f6-b9e5-470a-ac74-2f4844381373",
+      "title": "Willow",
+      "worksheets": [],
+      "workspace": "63788f5d77c7ef075c47069d",
+      "id": 1
+    },
+    {
+      "_id": "af2b87e6-730f-4bf5-8e1e-e262c0e7cc46",
+      "title": "Jada",
+      "worksheets": [],
+      "workspace": "63788f701130208924cdf7de",
+      "id": 2
+    },
+    {
+      "_id": "6fce333e-8d69-4546-86a5-a38aa1e478d2",
+      "title": "Elza",
+      "worksheets": [],
+      "workspace": "63788f82c43dd1a84886a3dc",
+      "id": 3
+    },
+    {
+      "_id": "c34a37fd-07c3-4b6c-9ba5-89f7768b6b66",
+      "title": "Sierra",
+      "worksheets": [],
+      "workspace": "63788f5d77c7ef075c47069d",
+      "id": 4
+    },
+    {
+      "_id": "c4eeee72-46dc-4108-8618-efd2f665a9f7",
+      "title": "Presley",
+      "worksheets": [],
+      "workspace": "63788f701130208924cdf7de",
+      "id": 5
+    },
+    {
+      "_id": "022882a5-e555-4f46-90d5-e40f65eedd5b",
+      "title": "Christiana",
+      "worksheets": [],
+      "workspace": "63788f701130208924cdf7de",
+      "id": 6
+    },
+    {
+      "_id": "e78c9e33-cf92-437f-bb4a-7ac01fc7464c",
+      "title": "Darrick",
+      "worksheets": [],
+      "workspace": "63788f5d77c7ef075c47069d",
+      "id": 7
+    },
+    {
+      "_id": "5c71642e-7dd8-4805-b8fe-cb04d1c977aa",
+      "title": "Jettie",
+      "worksheets": [],
+      "workspace": "63788f701130208924cdf7de",
+      "id": 8
+    },
+    {
+      "_id": "8af77b29-d916-49b4-b1ed-8e59265230f1",
+      "title": "Jason",
+      "worksheets": [],
+      "workspace": "63788f5d77c7ef075c47069d",
+      "id": 9
+    },
+    {
+      "_id": "cb2df1f0-72ff-41a4-9c54-649af830493e",
+      "title": "Abby",
+      "worksheets": [],
+      "workspace": "63788f82c43dd1a84886a3dc",
+      "id": 10
+    },
+    {
+      "_id": "29db1011-c29c-4257-9192-ec95692e7938",
+      "title": "Amelie",
+      "worksheets": [],
+      "workspace": "63788f82c43dd1a84886a3dc",
+      "id": 11
+    }
+  ]
+}
