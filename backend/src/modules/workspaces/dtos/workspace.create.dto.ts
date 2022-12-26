@@ -5,11 +5,22 @@ import {
     IsString,
     IsNotEmpty,
     MaxLength,
-    ValidateNested
+    ValidateNested,
+    MinLength,
+    Matches,
+    IsMongoId,
+    ArrayMinSize
 } from 'class-validator';
+import { ObjectId } from 'mongoose';
 
 class WorkspaceProperties {
+
+    @MinLength(4)
     readonly icon:string
+
+    @MinLength(7)
+    @MaxLength(7)
+    @Matches('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$')
     readonly background:string
 }
 
@@ -30,7 +41,10 @@ export class WorkspaceCreateDto {
     @Type(() => WorkspaceProperties)
     @ValidateNested()
     readonly properties: WorkspaceProperties;
- 
+
+    @IsMongoId({each: true})
+    @ArrayMinSize(0)
+    readonly workbooks: ObjectId[]; 
 }
 
 

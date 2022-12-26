@@ -32,10 +32,13 @@ export class WorkspacesController {
   @AuthJwtAccessProtected()
   async add(
     @Body()
-        { title, properties }: WorkspaceCreateDto
+        { title, properties, workbooks }: WorkspaceCreateDto
   ): Promise<void> {
-    console.log('body ', title, properties);
-    const temp: any = await this.workservice.findAll();
+    const createPayload = {
+      title, properties, workbooks
+    }
+    console.log('body ', title, properties,workbooks);
+    const temp: any = await this.workservice.create(createPayload);
     return temp;
   }
 
