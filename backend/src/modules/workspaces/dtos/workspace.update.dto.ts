@@ -10,9 +10,12 @@ import {
     Matches,
     IsMongoId,
     ArrayMinSize,
-    IsBoolean
+    IsBoolean,
 } from 'class-validator';
 import { ObjectId } from 'mongoose';
+
+import { IsOptional } from 'class-validator';
+import { Exclude } from 'class-transformer'
 
 class WorkspaceProperties {
 
@@ -26,11 +29,12 @@ class WorkspaceProperties {
 }
 
 
-export class WorkspaceCreateDto {
-    @ApiProperty({
-        example: faker.internet.userName(),
-        required: true,
-    })
+export class WorkspaceUpdatePutDto {
+    
+    @IsOptional()
+    @Exclude()
+    _id: string
+
     @IsString()
     @IsNotEmpty()
     @MaxLength(100)

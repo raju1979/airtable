@@ -6,12 +6,13 @@ import {
     IDatabaseFindOneOptions,
     IDatabaseOptions,
 } from 'src/common/database/interfaces/database.interface';
+import { WorkspaceEntity } from '../repository/entities/workspace.entity';
 
 
 export interface IWorkspaceService {
-    findAll<T>(
+    findAll(
         find?: Record<string, any>,
         options?: IDatabaseFindAllOptions
-    ): Promise<T[]>;
+    ): Promise<WorkspaceEntity[]>;
 
 }

@@ -48,6 +48,12 @@ export class WorkspaceEntity extends DatabaseMongoEntityAbstract {
     })
     @ArrayMinSize(0)
     workbooks: ObjectId[];
+
+    @Prop({
+        required: true,
+        type: Boolean
+    })
+    isActive: boolean;
 }
 
 export const WorkspaceSchema = SchemaFactory.createForClass(WorkspaceEntity);
