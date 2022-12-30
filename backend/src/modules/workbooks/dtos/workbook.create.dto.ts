@@ -11,19 +11,16 @@ import {
     IsMongoId,
     ArrayMinSize,
     IsBoolean,
-    IsOptional
+    IsOptional,
+    IsUUID
 } from 'class-validator';
 import { ObjectId } from 'mongoose';
 
-class WorkspaceProperties {
+class WorkbookProperties {
 
     @MinLength(4)
     readonly icon:string
 
-    @MinLength(7)
-    @MaxLength(7)
-    @Matches('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$')
-    readonly background:string
 }
 
 class OtherWorkspaceUsersProperties {
@@ -39,7 +36,7 @@ class OtherWorkspaceUsersProperties {
 }
 
 
-export class WorkspaceCreateDto {
+export class WorkbookCreateDto {
     @ApiProperty({
         example: faker.internet.userName(),
         required: true,
@@ -51,23 +48,21 @@ export class WorkspaceCreateDto {
     readonly title: string;
 
     @IsNotEmpty()
-    @Type(() => WorkspaceProperties)
+    @Type(() => WorkbookProperties)
     @ValidateNested()
-    readonly properties: WorkspaceProperties;
+    readonly properties: WorkbookProperties;
 
     @IsOptional()
-    @IsMongoId({each: true})
+    @IsUUID('4', { each: true })
     @ArrayMinSize(0)
-    readonly workbooks: ObjectId[]; 
+    readonly worksheets: string[]; 
+
+    @IsNotEmpty()
+    @IsUUID('4', { each: true })
+    readonly workspace: string;
 
     @IsBoolean()
     readonly isActive: boolean;
-
-    @IsOptional()
-    readonly primaryUser: string
-
-    @IsOptional()
-    readonly otherUsers: OtherWorkspaceUsersProperties[]
 }
 
 

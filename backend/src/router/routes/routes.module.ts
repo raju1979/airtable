@@ -8,11 +8,13 @@ import { HealthController } from 'src/health/controllers/health.controller';
 import { HealthModule } from 'src/health/health.module';
 import { UserController } from 'src/modules/user/controllers/user.controller';
 import { UserModule } from 'src/modules/user/user.module';
+import { WorkbooksController } from 'src/modules/workbooks/controllers/workbooks.controller';
+import { WorkbooksModule } from 'src/modules/workbooks/workbooks.module';
 import { WorkspacesController } from 'src/modules/workspaces/controllers/workspaces.controller';
 import { WorkspacesModule } from 'src/modules/workspaces/workspaces.module';
 
 @Module({
-    controllers: [HealthController, SettingController, UserController, WorkspacesController],
+    controllers: [HealthController, SettingController, UserController, WorkspacesController, WorkbooksController],
     providers: [],
     exports: [],
     imports: [
@@ -22,7 +24,8 @@ import { WorkspacesModule } from 'src/modules/workspaces/workspaces.module';
         HttpModule,
         UserModule,
         AuthModule,
-        WorkspacesModule
+        WorkspacesModule,
+        WorkbooksModule
     ],
 })
 export class RoutesModule {}

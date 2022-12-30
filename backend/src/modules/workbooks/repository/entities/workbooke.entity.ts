@@ -1,11 +1,11 @@
 import { Prop, SchemaFactory } from '@nestjs/mongoose';
-import { ArrayMinSize, IsBoolean, IsOptional, MinLength } from 'class-validator';
+import { ArrayMinSize, IsBoolean, IsNotEmpty, IsOptional, IsUUID, MinLength } from 'class-validator';
 import { CallbackWithoutResultAndOptionalError, ObjectId } from 'mongoose';
 import { DatabaseMongoEntityAbstract } from 'src/common/database/abstracts/database.mongo-entity.abstract';
 import { DatabaseEntity } from 'src/common/database/decorators/database.decorator';
 import { string } from 'yargs';
 
-export const WorkspaceDatabaseName = 'workspaces';
+export const WorkbookDatabaseName = 'workbooks';
 
 class PropertiesEntity {
     @Prop({
@@ -15,30 +15,11 @@ class PropertiesEntity {
         minlength: 4
     })
     icon: string
-
-    @Prop({
-        required: true,
-        type: String,
-        trim: true,
-        minlength: 4
-    })
-    background: string
 }
 
-class OtherWorkspaceUsersProperties {
 
-    @MinLength(3)
-    readonly user: string
-
-    @IsBoolean()
-    readonly canRead: boolean
-
-    @IsBoolean()
-    readonly canEdit: boolean
-}
-
-@DatabaseEntity({ collection: WorkspaceDatabaseName })
-export class WorkspaceEntity extends DatabaseMongoEntityAbstract {
+@DatabaseEntity({ collection: WorkbookDatabaseName })
+export class WorkbookEntity extends DatabaseMongoEntityAbstract {
     @Prop({
         required: true,
         index: true,
@@ -48,7 +29,6 @@ export class WorkspaceEntity extends DatabaseMongoEntityAbstract {
         maxlength: 100,
     })
     title: string;
-
 
     @Prop({
         required: true,        
@@ -60,7 +40,15 @@ export class WorkspaceEntity extends DatabaseMongoEntityAbstract {
         required: true,
     })
     @ArrayMinSize(0)
-    workbooks: ObjectId[];
+    @IsUUID('4', { each: true })
+    worksheets: string[];
+
+    @Prop({
+        required: true,
+    })
+    @IsNotEmpty()
+    @IsUUID('4', { each: true })
+    readonly workspace: string;
 
     @Prop({
         required: true,
@@ -77,23 +65,11 @@ export class WorkspaceEntity extends DatabaseMongoEntityAbstract {
         type: String
     })
     updatedBy: string;
-
-    @Prop({
-        type: String
-    })
-    @IsOptional()
-    primaryUser: string;
-
-    @Prop({
-        type: String
-    })
-    @IsOptional()
-    otherUsers: OtherWorkspaceUsersProperties[]
 }
 
-export const WorkspaceSchema = SchemaFactory.createForClass(WorkspaceEntity);
+export const WorkbookSchema = SchemaFactory.createForClass(WorkbookEntity);
 
-WorkspaceSchema.pre('save', function (next: CallbackWithoutResultAndOptionalError) {
+WorkbookSchema.pre('save', function (next: CallbackWithoutResultAndOptionalError) {
     console.log('SAVING');
     next();
 });

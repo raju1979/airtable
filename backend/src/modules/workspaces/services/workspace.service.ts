@@ -52,7 +52,8 @@ export class WorkspaceService implements IWorkspaceService {
             title,
             properties,
             workbooks,
-            isActive
+            isActive,
+            user
         }: IWorkspaceCreate
     ): Promise<WorkspaceEntity> {
         const workspace: WorkspaceEntity = new WorkspaceEntity();
@@ -60,6 +61,9 @@ export class WorkspaceService implements IWorkspaceService {
         workspace.properties = properties;
         workspace.workbooks = workbooks;
         workspace.isActive = isActive;
+        workspace.createdBy = user;
+        workspace.updatedBy = user;
+        workspace.primaryUser = user;
         return this.workspaceRepository.create<WorkspaceEntity>(workspace);
     }
     

@@ -94,6 +94,7 @@ export class WorkspacesController {
     @UserProfileGuard()
     @AuthJwtAccessProtected()
     async add(
+        @GetUser() user: IUserEntity,
         @Body()
         { title, properties, workbooks, isActive }: WorkspaceCreateDto
     ): Promise<void> {
@@ -102,8 +103,8 @@ export class WorkspacesController {
             properties,
             workbooks,
             isActive,
+            user: user.username,
         };
-        console.log('body ', title, properties, workbooks, isActive);
         const temp: any = await this.workservice.create(createPayload);
         return temp;
     }
@@ -115,7 +116,6 @@ export class WorkspacesController {
         @Param('workspace') id,
         @Body() body: WorkspaceUpdatePutDto
     ): Promise<any> {
-        console.log(body);
         let workspace;
         try {
             workspace = await this.workservice.findOneById(id);
