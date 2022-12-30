@@ -18,9 +18,9 @@ export class LoginComponent {
 
   login(navigateUrl: string): void {
     this.apiService.postData('user/login', {
-      'username': 'rdhoundiyal',
+      'username': 'admin',
       'rememberMe': false,
-      'password': '2fwfhV8QPF@@!123'
+      'password': 'aaAA@@123444'
     }).subscribe(
       res => {
         this.storage.set('token', res.data.accessToken).subscribe(() => {

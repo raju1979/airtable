@@ -1,11 +1,18 @@
-<div class="page-container w-100 h-100">
+<div class="page-container w-100 h-100 overflow-y position-relative">
+    <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded add-workspace-btn" (click)="addWorkspace()"></button>
     <ng-container *ngFor="let workspace of workspaces; let i = index;">
         <section>
-            <h1>{{workspace.title}}</h1>
+            <section class="d-flex">
+                <h1>{{workspace.title}}</h1>
+                <span><i [className]="'fa ' + workspace?.properties.icon"> </i></span>
+                <span class="d-inline-block colored-container" [style.background]="workspace.properties.background"></span>
+                <button pButton pRipple type="button" icon="pi pi-file-edit" class="p-button-rounded" (click)="editWorkspace(workspace)"></button>
+            </section>
+            
             <div class="workbooks-container d-flex w-100 p-2">
                 <ng-container *ngFor="let workbook of workspace.workbooks">
                     <a [routerLink]="['../workbook', workbook.id]" class="d-inline-block mr-2" [style.margin-right]="'20px'">
-                        <button class="me-2" pButton pRipple type="button" [label]="workbook.title" class="p-button-rounded"></button>
+                        <button class="me-2" pButton pRipple type="button" [label]="workbook.title" class="p-button-rounded">Edit {{workbook}}</button>
                     </a>
                     
                 </ng-container>

@@ -1,12 +1,28 @@
 import { Prop, SchemaFactory } from '@nestjs/mongoose';
-import { any } from 'joi';
-import { CallbackWithoutResultAndOptionalError } from 'mongoose';
-import { AwsS3Serialization } from 'src/common/aws/serializations/aws.s3.serialization';
+import { ArrayMinSize } from 'class-validator';
+import { CallbackWithoutResultAndOptionalError, ObjectId } from 'mongoose';
 import { DatabaseMongoEntityAbstract } from 'src/common/database/abstracts/database.mongo-entity.abstract';
 import { DatabaseEntity } from 'src/common/database/decorators/database.decorator';
-import { RoleEntity } from 'src/modules/role/repository/entities/role.entity';
 
 export const WorkspaceDatabaseName = 'workspaces';
+
+class PropertiesEntity {
+    @Prop({
+        required: true,
+        type: String,
+        trim: true,
+        minlength: 4
+    })
+    icon: string
+
+    @Prop({
+        required: true,
+        type: String,
+        trim: true,
+        minlength: 4
+    })
+    background: string
+}
 
 @DatabaseEntity({ collection: WorkspaceDatabaseName })
 export class WorkspaceEntity extends DatabaseMongoEntityAbstract {
@@ -20,16 +36,24 @@ export class WorkspaceEntity extends DatabaseMongoEntityAbstract {
     })
     title: string;
 
+
     @Prop({
         required: true,        
-        type:Object,
+        type:PropertiesEntity,
     })
-    properties: Object;
+    properties: PropertiesEntity;
 
     @Prop({
         required: true,
     })
-    workbooks: [];
+    @ArrayMinSize(0)
+    workbooks: ObjectId[];
+
+    @Prop({
+        required: true,
+        type: Boolean
+    })
+    isActive: boolean;
 }
 
 export const WorkspaceSchema = SchemaFactory.createForClass(WorkspaceEntity);

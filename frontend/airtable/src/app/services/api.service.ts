@@ -15,13 +15,19 @@ export class ApiService {
   }
   
 
-  getData(endpoint: string): Observable<any> {
-    const ENDPOINT = `${this.baseUrl}/${endpoint}`;
+  getData(endpoint: string, options?:string): Observable<any> {
+    const optionsInner = options || '?page=1&perPage=20&sort=createdAt%40desc&isActive=true';
+    const ENDPOINT = `${this.baseUrl}/${endpoint}${optionsInner}`;
     return this.http.get(ENDPOINT)
   }
 
-  postData(endpoint: string, data: any) : Observable<any> {
+  postData(endpoint: string, data?: any) : Observable<any> {
     const ENDPOINT = `${this.baseUrl}/${endpoint}`;
     return this.http.post(ENDPOINT, data);
+  }
+
+  putData(endpoint: string, data?: any) : Observable<any> {
+    const ENDPOINT = `${this.baseUrl}/${endpoint}`;
+    return this.http.put(ENDPOINT, data);
   }
 }
