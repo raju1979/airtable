@@ -15,7 +15,7 @@ import { IWorkspaceCreate } from '../interfaces/workspace.interface';
 import { WorkspaceEntity } from '../repository/entities/workspace.entity';
 import { HelperDateService } from 'src/common/helper/services/helper.date.service';
 import { WorkspaceRepository } from '../repository/repositories/workspace.repository';
-import { WorkspaceUpdatePutDto } from '../dtos/workspace.update.dto';
+import { WorkspaceUpdatePatchDto, WorkspaceUpdatePutDto } from '../dtos/workspace.update.dto';
 
 
 @Injectable()
@@ -74,6 +74,18 @@ export class WorkspaceService implements IWorkspaceService {
         options?: IDatabaseOptions
     ): Promise<WorkspaceEntity> {
         return this.workspaceRepository.updateOneById<WorkspaceUpdatePutDto>(
+            _id,
+            data,
+            options
+        );
+    }
+
+    async patch(
+        _id: string,
+        data: WorkspaceUpdatePatchDto,
+        options?: IDatabaseOptions
+    ): Promise<WorkspaceEntity> {
+        return this.workspaceRepository.updateOneById<WorkspaceUpdatePatchDto>(
             _id,
             data,
             options

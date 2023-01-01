@@ -7,6 +7,7 @@ import {
     Put,
     Param,
     InternalServerErrorException,
+    Patch,
 } from '@nestjs/common';
 import {
     AuthJwtAccessProtected,
@@ -18,7 +19,7 @@ import { IUserEntity } from 'src/modules/user/interfaces/user.interface';
 import { UserProfileDoc } from 'src/modules/user/docs/user.doc';
 import { UserProfileGuard } from 'src/modules/user/decorators/user.public.decorator';
 import { WorkspaceCreateDto } from '../dtos/workspace.create.dto';
-import { WorkspaceUpdatePutDto } from '../dtos/workspace.update.dto';
+import { WorkspaceUpdatePatchDto, WorkspaceUpdatePutDto } from '../dtos/workspace.update.dto';
 import { reject } from 'lodash';
 import { resolve } from 'path';
 import { func } from 'joi';
@@ -32,6 +33,7 @@ import { PaginationService } from 'src/common/pagination/services/pagination.ser
 import { GetWorkspace } from '../decorators/workspace.decorator';
 import { ENUM_AUTH_PERMISSIONS } from 'src/common/auth/constants/auth.enum.permission.constant';
 import { ENUM_ERROR_STATUS_CODE_ERROR } from 'src/common/error/constants/error.status-code.constant';
+import { IWorkspaceEntity } from '../interfaces/workspace.interface';
 
 @ApiTags('modules.workspaces')
 @Controller({
@@ -90,7 +92,7 @@ export class WorkspacesController {
         };
     }
 
-    @Post()
+    @Post('/create')
     @UserProfileGuard()
     @AuthJwtAccessProtected()
     async add(
@@ -131,10 +133,34 @@ export class WorkspacesController {
         return workspace;
     }
 
-    @Get('/get/:workspace')
+    @Patch('/updatesome/:workspace')
     @UserProfileGuard()
     @AuthJwtAccessProtected()
-    async get(@Param('workspace') id): Promise<IResponse> {
+    async updateSome(
+        @Param('workspace') id,
+        @Body() body: WorkspaceUpdatePatchDto
+    ): Promise<any> {
+        let workspace;
+        try {
+            workspace = await this.workservice.findOneById(id);
+
+            await this.workservice.patch(workspace._id, body);
+        } catch (err: any) {
+            throw new InternalServerErrorException({
+                statusCode: ENUM_ERROR_STATUS_CODE_ERROR.ERROR_UNKNOWN,
+                message: 'http.serverError.internalServerError',
+                error: err.message,
+            });
+        }
+
+        return workspace;
+    }
+
+    @UserProfileGuard()
+    @AuthJwtAccessProtected()
+    @Get('/get/:workspace') 
+    async get(@GetWorkspace() workspaceData: IWorkspaceEntity, @Param('workspace') id): Promise<IResponse> {
+        console.log('+++++++++-----', workspaceData);
         let workspace;
         try {
             workspace = await this.workservice.findOneById(id);

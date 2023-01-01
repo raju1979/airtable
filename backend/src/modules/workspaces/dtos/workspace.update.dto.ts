@@ -11,6 +11,7 @@ import {
     IsMongoId,
     ArrayMinSize,
     IsBoolean,
+    IsUUID,
 } from 'class-validator';
 import { ObjectId } from 'mongoose';
 
@@ -46,12 +47,39 @@ export class WorkspaceUpdatePutDto {
     @ValidateNested()
     readonly properties: WorkspaceProperties;
 
-    @IsMongoId({each: true})
+    @IsUUID('4', { each: true })
     @ArrayMinSize(0)
-    readonly workbooks: ObjectId[]; 
+    readonly workbooks: string[]; 
 
     @IsBoolean()
     readonly isActive: boolean;
 }
 
+export class WorkspaceUpdatePatchDto {
+    
+    @IsOptional()
+    @Exclude()
+    _id: string
+
+    @IsOptional()
+    @IsString()
+    @IsNotEmpty()
+    @MaxLength(100)
+    @Type(() => String)
+    readonly title: string;
+
+    @IsOptional()
+    @IsNotEmpty()
+    @Type(() => WorkspaceProperties)
+    @ValidateNested()
+    readonly properties: WorkspaceProperties;
+
+    @IsUUID('4', { each: true })
+    @ArrayMinSize(0)
+    readonly workbooks: string[]; 
+
+    @IsOptional()
+    @IsBoolean()
+    readonly isActive: boolean;
+}
 

@@ -5,6 +5,6 @@ services:
   container_name: mongodb
   env_file: variables.env
   volumes:
-  - /home/barry/mongodb/database:/data/db
+  - /home/raju/mongodb/database:/data/db
   ports:
   - 27017:27017

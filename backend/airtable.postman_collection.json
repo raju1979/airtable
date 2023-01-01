@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "83a054e4-3095-490b-86a6-32895c23090b",
+		"_postman_id": "a92f08ea-1960-4e7d-9952-35b86242ac25",
 		"name": "airtable",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12546589"
 	},
 	"item": [
 		{
@@ -78,7 +79,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjMyYjUyZjVkLTgzNzgtNDAzYS1hNzFlLTQzODU3MmNjM2JhNyIsInVzZXJuYW1lIjoiYWRtaW4iLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoidGVzdCIsInJvbGUiOnsibmFtZSI6ImFkbWluIiwicGVybWlzc2lvbnMiOlsiVVNFUl9DUkVBVEUiLCJVU0VSX1VQREFURSIsIlVTRVJfUkVBRCIsIlVTRVJfREVMRVRFIiwiVVNFUl9JTVBPUlQiLCJVU0VSX0VYUE9SVCIsIlJPTEVfQ1JFQVRFIiwiUk9MRV9VUERBVEUiLCJST0xFX1JFQUQiLCJST0xFX0RFTEVURSIsIlBFUk1JU1NJT05fUkVBRCIsIlBFUk1JU1NJT05fVVBEQVRFIiwiU0VUVElOR19SRUFEIiwiU0VUVElOR19VUERBVEUiXSwiYWNjZXNzRm9yIjoiQURNSU4ifSwiY3JlYXRlZEF0IjoiMjAyMi0xMi0yNlQwNDoxNjowOS41MjhaIiwidXBkYXRlZEF0IjoiMjAyMi0xMi0yNlQwNDoxNjowOS41MjhaIiwicmVtZW1iZXJNZSI6ZmFsc2UsImxvZ2luRGF0ZSI6IjIwMjItMTItMjZUMDQ6Mjk6MDEuMzc5WiJ9LCJpYXQiOjE2NzIwMjg5NDEsIm5iZiI6MTY3MjAyODk0MSwiZXhwIjoxNjczODI4OTQxLCJhdWQiOiJodHRwczovL2V4YW1wbGUuY29tIiwiaXNzIjoiYWNrIiwic3ViIjoiQWNrRGV2ZWxvcG1lbnQifQ._Wi8ZNStmRDK8TTMsFgRQijPrhzfXYCUG-pykli-wTY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6ImI1YzE1NWJjLWE4N2MtNGQwNi04OTkwLTM3ZGFmYzNmODZhNyIsInVzZXJuYW1lIjoiYWRtaW4iLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoidGVzdCIsInJvbGUiOnsibmFtZSI6ImFkbWluIiwicGVybWlzc2lvbnMiOlsiVVNFUl9DUkVBVEUiLCJVU0VSX1VQREFURSIsIlVTRVJfUkVBRCIsIlVTRVJfREVMRVRFIiwiVVNFUl9JTVBPUlQiLCJVU0VSX0VYUE9SVCIsIlJPTEVfQ1JFQVRFIiwiUk9MRV9VUERBVEUiLCJST0xFX1JFQUQiLCJST0xFX0RFTEVURSIsIlBFUk1JU1NJT05fUkVBRCIsIlBFUk1JU1NJT05fVVBEQVRFIiwiU0VUVElOR19SRUFEIiwiU0VUVElOR19VUERBVEUiXSwiYWNjZXNzRm9yIjoiQURNSU4ifSwiY3JlYXRlZEF0IjoiMjAyMy0wMS0wMVQwNjozMTozNS4xMDBaIiwidXBkYXRlZEF0IjoiMjAyMy0wMS0wMVQwNjozMTozNS4xMDBaIiwicmVtZW1iZXJNZSI6ZmFsc2UsImxvZ2luRGF0ZSI6IjIwMjMtMDEtMDFUMTQ6MDQ6NTQuODA2WiJ9LCJpYXQiOjE2NzI1ODE4OTQsIm5iZiI6MTY3MjU4MTg5NCwiZXhwIjoxNjc0MzgxODk0LCJhdWQiOiJodHRwczovL2V4YW1wbGUuY29tIiwiaXNzIjoiYWNrIiwic3ViIjoiQWNrRGV2ZWxvcG1lbnQifQ.wvR1Wm-cNbOQyQEfc8cEiSP9pI5KmkHb3iU3IB99dHk",
 									"type": "string"
 								}
 							]
@@ -87,7 +88,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"hello world-13\",\r\n    \"properties\": {\r\n        \"icon\": \"copy\",\r\n        \"background\": \"#aecece\"\r\n    },\r\n    \"workbooks\": [],\r\n    \"isActive\": true\r\n}",
+							"raw": "{\r\n    \"title\": \"hello world-16\",\r\n    \"properties\": {\r\n        \"icon\": \"copy\",\r\n        \"background\": \"#aecece\"\r\n    },\r\n    \"workbooks\": [],\r\n    \"isActive\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -95,7 +96,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/v1/workspaces/update/d7f65c71-30ac-4630-9bdd-ba8f8d7001ed",
+							"raw": "http://localhost:3000/api/v1/workspaces/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -105,8 +106,7 @@
 								"api",
 								"v1",
 								"workspaces",
-								"update",
-								"d7f65c71-30ac-4630-9bdd-ba8f8d7001ed"
+								"create"
 							],
 							"query": [
 								{
@@ -266,6 +266,137 @@
 								"workspaces",
 								"update",
 								"d7f65c71-30ac-4630-9bdd-ba8f8d7001ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-workspace-by-id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6ImI1YzE1NWJjLWE4N2MtNGQwNi04OTkwLTM3ZGFmYzNmODZhNyIsInVzZXJuYW1lIjoiYWRtaW4iLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoidGVzdCIsInJvbGUiOnsibmFtZSI6ImFkbWluIiwicGVybWlzc2lvbnMiOlsiVVNFUl9DUkVBVEUiLCJVU0VSX1VQREFURSIsIlVTRVJfUkVBRCIsIlVTRVJfREVMRVRFIiwiVVNFUl9JTVBPUlQiLCJVU0VSX0VYUE9SVCIsIlJPTEVfQ1JFQVRFIiwiUk9MRV9VUERBVEUiLCJST0xFX1JFQUQiLCJST0xFX0RFTEVURSIsIlBFUk1JU1NJT05fUkVBRCIsIlBFUk1JU1NJT05fVVBEQVRFIiwiU0VUVElOR19SRUFEIiwiU0VUVElOR19VUERBVEUiXSwiYWNjZXNzRm9yIjoiQURNSU4ifSwiY3JlYXRlZEF0IjoiMjAyMy0wMS0wMVQwNjozMTozNS4xMDBaIiwidXBkYXRlZEF0IjoiMjAyMy0wMS0wMVQwNjozMTozNS4xMDBaIiwicmVtZW1iZXJNZSI6ZmFsc2UsImxvZ2luRGF0ZSI6IjIwMjMtMDEtMDFUMDY6MzI6NDQuNDQ3WiJ9LCJpYXQiOjE2NzI1NTQ3NjQsIm5iZiI6MTY3MjU1NDc2NCwiZXhwIjoxNjc0MzU0NzY0LCJhdWQiOiJodHRwczovL2V4YW1wbGUuY29tIiwiaXNzIjoiYWNrIiwic3ViIjoiQWNrRGV2ZWxvcG1lbnQifQ.Gc2PHhzlJ8yaK-DdoyJMsmbNmU60icSnyVYNfy5stT8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"new title\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/workspaces/updatesome/6bd268c9-09a1-45e6-8a60-237846a2294e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"workspaces",
+								"updatesome",
+								"6bd268c9-09a1-45e6-8a60-237846a2294e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "workbooks",
+			"item": [
+				{
+					"name": "workbooks",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjlmYjk5ZWMyLTZhMWQtNDE1OS1iZTA4LTVjMWEwNDJjYmZiMiIsInVzZXJuYW1lIjoiYWRtaW4iLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoidGVzdCIsInJvbGUiOnsibmFtZSI6ImFkbWluIiwicGVybWlzc2lvbnMiOlsiVVNFUl9DUkVBVEUiLCJVU0VSX1VQREFURSIsIlVTRVJfUkVBRCIsIlVTRVJfREVMRVRFIiwiVVNFUl9JTVBPUlQiLCJVU0VSX0VYUE9SVCIsIlJPTEVfQ1JFQVRFIiwiUk9MRV9VUERBVEUiLCJST0xFX1JFQUQiLCJST0xFX0RFTEVURSIsIlBFUk1JU1NJT05fUkVBRCIsIlBFUk1JU1NJT05fVVBEQVRFIiwiU0VUVElOR19SRUFEIiwiU0VUVElOR19VUERBVEUiXSwiYWNjZXNzRm9yIjoiQURNSU4ifSwiY3JlYXRlZEF0IjoiMjAyMi0xMi0yNVQxMjowNzozMC42ODBaIiwidXBkYXRlZEF0IjoiMjAyMi0xMi0yNVQxMjowNzozMC42ODBaIiwicmVtZW1iZXJNZSI6ZmFsc2UsImxvZ2luRGF0ZSI6IjIwMjItMTItMzFUMDU6NTE6NTguMjYzWiJ9LCJpYXQiOjE2NzI0NjU5MTgsIm5iZiI6MTY3MjQ2NTkxOCwiZXhwIjoxNjc0MjY1OTE4LCJhdWQiOiJodHRwczovL2V4YW1wbGUuY29tIiwiaXNzIjoiYWNrIiwic3ViIjoiQWNrRGV2ZWxvcG1lbnQifQ.zd-RCBZMBkNI9hajv2JxVApsE9EKHd3gANCy57NszE8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"hello world-12\",\r\n    \"properties\": {\r\n        \"icon\": \"copy\",\r\n        \"background\": \"#aecece\"\r\n    },\r\n    \"workbooks\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/workbooks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"workbooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6ImI1YzE1NWJjLWE4N2MtNGQwNi04OTkwLTM3ZGFmYzNmODZhNyIsInVzZXJuYW1lIjoiYWRtaW4iLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoidGVzdCIsInJvbGUiOnsibmFtZSI6ImFkbWluIiwicGVybWlzc2lvbnMiOlsiVVNFUl9DUkVBVEUiLCJVU0VSX1VQREFURSIsIlVTRVJfUkVBRCIsIlVTRVJfREVMRVRFIiwiVVNFUl9JTVBPUlQiLCJVU0VSX0VYUE9SVCIsIlJPTEVfQ1JFQVRFIiwiUk9MRV9VUERBVEUiLCJST0xFX1JFQUQiLCJST0xFX0RFTEVURSIsIlBFUk1JU1NJT05fUkVBRCIsIlBFUk1JU1NJT05fVVBEQVRFIiwiU0VUVElOR19SRUFEIiwiU0VUVElOR19VUERBVEUiXSwiYWNjZXNzRm9yIjoiQURNSU4ifSwiY3JlYXRlZEF0IjoiMjAyMy0wMS0wMVQwNjozMTozNS4xMDBaIiwidXBkYXRlZEF0IjoiMjAyMy0wMS0wMVQwNjozMTozNS4xMDBaIiwicmVtZW1iZXJNZSI6ZmFsc2UsImxvZ2luRGF0ZSI6IjIwMjMtMDEtMDFUMDY6MzI6NDQuNDQ3WiJ9LCJpYXQiOjE2NzI1NTQ3NjQsIm5iZiI6MTY3MjU1NDc2NCwiZXhwIjoxNjc0MzU0NzY0LCJhdWQiOiJodHRwczovL2V4YW1wbGUuY29tIiwiaXNzIjoiYWNrIiwic3ViIjoiQWNrRGV2ZWxvcG1lbnQifQ.Gc2PHhzlJ8yaK-DdoyJMsmbNmU60icSnyVYNfy5stT8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"hello world-13\",\r\n    \"properties\": {\r\n        \"icon\": \"copy\"\r\n    },\r\n    \"worksheets\": [],\r\n    \"workspace\": \"3047ff3c-4666-4f16-99c4-392f9dd0131a\",\r\n    \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/workbooks/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"workbooks",
+								"create"
 							]
 						}
 					},

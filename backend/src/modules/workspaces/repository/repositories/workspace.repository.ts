@@ -4,6 +4,7 @@ import { DatabaseMongoRepositoryAbstract } from 'src/common/database/abstracts/d
 import { DatabaseModel } from 'src/common/database/decorators/database.decorator';
 import { IDatabaseRepository } from 'src/common/database/interfaces/database.repository.interface';
 import { UserEntity } from 'src/modules/user/repository/entities/user.entity';
+import { WorkbookEntity } from 'src/modules/workbooks/repository/entities/workbook.entity';
 import { WorkspaceEntity } from '../entities/workspace.entity';
 
 @Injectable()
@@ -15,6 +16,13 @@ export class WorkspaceRepository
         @DatabaseModel(WorkspaceEntity.name)
         private readonly workspaceModel: Model<WorkspaceEntity>
     ) {
-        super(workspaceModel);
+        super(workspaceModel, {
+            path: 'workbook',
+            populate: {
+                path: 'workbooks',
+                match: '_id',
+                model: WorkbookEntity.name
+            }
+        });
     }
 }

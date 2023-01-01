@@ -1,8 +1,9 @@
 import { Prop, SchemaFactory } from '@nestjs/mongoose';
-import { ArrayMinSize, IsBoolean, IsOptional, MinLength } from 'class-validator';
-import { CallbackWithoutResultAndOptionalError, ObjectId } from 'mongoose';
+import { ArrayMinSize, IsBoolean, IsOptional, IsUUID, MinLength } from 'class-validator';
+import { CallbackWithoutResultAndOptionalError } from 'mongoose';
 import { DatabaseMongoEntityAbstract } from 'src/common/database/abstracts/database.mongo-entity.abstract';
 import { DatabaseEntity } from 'src/common/database/decorators/database.decorator';
+import { WorkbookEntity } from 'src/modules/workbooks/repository/entities/workbook.entity';
 import { string } from 'yargs';
 
 export const WorkspaceDatabaseName = 'workspaces';
@@ -58,9 +59,12 @@ export class WorkspaceEntity extends DatabaseMongoEntityAbstract {
 
     @Prop({
         required: true,
+        default: [],
+        _id: false,
+        type: Array<string>,
+        ref: WorkbookEntity.name,
     })
-    @ArrayMinSize(0)
-    workbooks: ObjectId[];
+    workbooks: string[];
 
     @Prop({
         required: true,

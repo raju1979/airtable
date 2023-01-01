@@ -1,7 +1,6 @@
-import { ObjectId } from "mongoose";
+import { WorkbookEntity } from "src/modules/workbooks/repository/entities/workbook.entity";
 import { WorkspaceCreateDto } from "../dtos/workspace.create.dto";
-
-
+import { WorkspaceEntity } from "../repository/entities/workspace.entity";
 
 export interface IWorkspaceCreate {
     title: string;
@@ -9,9 +8,13 @@ export interface IWorkspaceCreate {
         icon: string;
         background: string;
     }
-    workbooks: ObjectId[];
+    workbooks: string[];
     isActive: boolean;
     primaryUser?: string;
     otherUsers?: any[];
     user? :string
+}
+
+export interface IWorkspaceEntity extends Omit<WorkspaceEntity, 'workbooks'> {
+    workbooks: WorkbookEntity[];
 }

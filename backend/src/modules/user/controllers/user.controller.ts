@@ -79,7 +79,6 @@ export class UserController {
     @AuthJwtAccessProtected()
     @Get('/profile')
     async profile(@GetUser() user: IUserEntity): Promise<IResponse> {
-        console.log('ussssssssssssssss', user)
         return user;
     }
 

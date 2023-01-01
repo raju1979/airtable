@@ -48,7 +48,7 @@ export class WorkbookEntity extends DatabaseMongoEntityAbstract {
     })
     @IsNotEmpty()
     @IsUUID('4', { each: true })
-    readonly workspace: string;
+    workspace: string;
 
     @Prop({
         required: true,

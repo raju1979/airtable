@@ -58,7 +58,7 @@ export class WorkspaceCreateDto {
     @IsOptional()
     @IsMongoId({each: true})
     @ArrayMinSize(0)
-    readonly workbooks: ObjectId[]; 
+    readonly workbooks: string[]; 
 
     @IsBoolean()
     readonly isActive: boolean;
