@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "a92f08ea-1960-4e7d-9952-35b86242ac25",
+		"_postman_id": "716db428-4b44-41e7-9d74-ff75940b2e89",
 		"name": "airtable",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "12546589"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -329,7 +328,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjlmYjk5ZWMyLTZhMWQtNDE1OS1iZTA4LTVjMWEwNDJjYmZiMiIsInVzZXJuYW1lIjoiYWRtaW4iLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoidGVzdCIsInJvbGUiOnsibmFtZSI6ImFkbWluIiwicGVybWlzc2lvbnMiOlsiVVNFUl9DUkVBVEUiLCJVU0VSX1VQREFURSIsIlVTRVJfUkVBRCIsIlVTRVJfREVMRVRFIiwiVVNFUl9JTVBPUlQiLCJVU0VSX0VYUE9SVCIsIlJPTEVfQ1JFQVRFIiwiUk9MRV9VUERBVEUiLCJST0xFX1JFQUQiLCJST0xFX0RFTEVURSIsIlBFUk1JU1NJT05fUkVBRCIsIlBFUk1JU1NJT05fVVBEQVRFIiwiU0VUVElOR19SRUFEIiwiU0VUVElOR19VUERBVEUiXSwiYWNjZXNzRm9yIjoiQURNSU4ifSwiY3JlYXRlZEF0IjoiMjAyMi0xMi0yNVQxMjowNzozMC42ODBaIiwidXBkYXRlZEF0IjoiMjAyMi0xMi0yNVQxMjowNzozMC42ODBaIiwicmVtZW1iZXJNZSI6ZmFsc2UsImxvZ2luRGF0ZSI6IjIwMjItMTItMzFUMDU6NTE6NTguMjYzWiJ9LCJpYXQiOjE2NzI0NjU5MTgsIm5iZiI6MTY3MjQ2NTkxOCwiZXhwIjoxNjc0MjY1OTE4LCJhdWQiOiJodHRwczovL2V4YW1wbGUuY29tIiwiaXNzIjoiYWNrIiwic3ViIjoiQWNrRGV2ZWxvcG1lbnQifQ.zd-RCBZMBkNI9hajv2JxVApsE9EKHd3gANCy57NszE8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjMyYjUyZjVkLTgzNzgtNDAzYS1hNzFlLTQzODU3MmNjM2JhNyIsInVzZXJuYW1lIjoiYWRtaW4iLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoidGVzdCIsInJvbGUiOnsibmFtZSI6ImFkbWluIiwicGVybWlzc2lvbnMiOlsiVVNFUl9DUkVBVEUiLCJVU0VSX1VQREFURSIsIlVTRVJfUkVBRCIsIlVTRVJfREVMRVRFIiwiVVNFUl9JTVBPUlQiLCJVU0VSX0VYUE9SVCIsIlJPTEVfQ1JFQVRFIiwiUk9MRV9VUERBVEUiLCJST0xFX1JFQUQiLCJST0xFX0RFTEVURSIsIlBFUk1JU1NJT05fUkVBRCIsIlBFUk1JU1NJT05fVVBEQVRFIiwiU0VUVElOR19SRUFEIiwiU0VUVElOR19VUERBVEUiXSwiYWNjZXNzRm9yIjoiQURNSU4ifSwiY3JlYXRlZEF0IjoiMjAyMi0xMi0yNlQwNDoxNjowOS41MjhaIiwidXBkYXRlZEF0IjoiMjAyMi0xMi0yNlQwNDoxNjowOS41MjhaIiwicmVtZW1iZXJNZSI6ZmFsc2UsImxvZ2luRGF0ZSI6IjIwMjMtMDEtMThUMDU6MDY6NDkuMDExWiJ9LCJpYXQiOjE2NzQwMTg0MDksIm5iZiI6MTY3NDAxODQwOSwiZXhwIjoxNjc1ODE4NDA5LCJhdWQiOiJodHRwczovL2V4YW1wbGUuY29tIiwiaXNzIjoiYWNrIiwic3ViIjoiQWNrRGV2ZWxvcG1lbnQifQ.p167y3ikyIuAqW6GDeASUXYTaLhQkMI-7P9sdEuPpMs",
 									"type": "string"
 								}
 							]
@@ -346,7 +345,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/v1/workbooks",
+							"raw": "http://localhost:3000/api/v1/workbooks/list?page=3&perPage=1&sort=createdAt%40desc&isActive=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -355,7 +354,26 @@
 							"path": [
 								"api",
 								"v1",
-								"workbooks"
+								"workbooks",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "3"
+								},
+								{
+									"key": "perPage",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt%40desc"
+								},
+								{
+									"key": "isActive",
+									"value": "true"
+								}
 							]
 						}
 					},
@@ -397,6 +415,51 @@
 								"v1",
 								"workbooks",
 								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "workbook-get-by-id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjMyYjUyZjVkLTgzNzgtNDAzYS1hNzFlLTQzODU3MmNjM2JhNyIsInVzZXJuYW1lIjoiYWRtaW4iLCJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoidGVzdCIsInJvbGUiOnsibmFtZSI6ImFkbWluIiwicGVybWlzc2lvbnMiOlsiVVNFUl9DUkVBVEUiLCJVU0VSX1VQREFURSIsIlVTRVJfUkVBRCIsIlVTRVJfREVMRVRFIiwiVVNFUl9JTVBPUlQiLCJVU0VSX0VYUE9SVCIsIlJPTEVfQ1JFQVRFIiwiUk9MRV9VUERBVEUiLCJST0xFX1JFQUQiLCJST0xFX0RFTEVURSIsIlBFUk1JU1NJT05fUkVBRCIsIlBFUk1JU1NJT05fVVBEQVRFIiwiU0VUVElOR19SRUFEIiwiU0VUVElOR19VUERBVEUiXSwiYWNjZXNzRm9yIjoiQURNSU4ifSwiY3JlYXRlZEF0IjoiMjAyMi0xMi0yNlQwNDoxNjowOS41MjhaIiwidXBkYXRlZEF0IjoiMjAyMi0xMi0yNlQwNDoxNjowOS41MjhaIiwicmVtZW1iZXJNZSI6ZmFsc2UsImxvZ2luRGF0ZSI6IjIwMjMtMDEtMThUMDU6MDY6NDkuMDExWiJ9LCJpYXQiOjE2NzQwMTg0MDksIm5iZiI6MTY3NDAxODQwOSwiZXhwIjoxNjc1ODE4NDA5LCJhdWQiOiJodHRwczovL2V4YW1wbGUuY29tIiwiaXNzIjoiYWNrIiwic3ViIjoiQWNrRGV2ZWxvcG1lbnQifQ.p167y3ikyIuAqW6GDeASUXYTaLhQkMI-7P9sdEuPpMs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"hello world-12\",\r\n    \"properties\": {\r\n        \"icon\": \"copy\",\r\n        \"background\": \"#aecece\"\r\n    },\r\n    \"workbooks\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/workbooks/get/f3cf71f9-20e1-4e47-bd91-4a63d63ce5f3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"workbooks",
+								"get",
+								"f3cf71f9-20e1-4e47-bd91-4a63d63ce5f3"
 							]
 						}
 					},

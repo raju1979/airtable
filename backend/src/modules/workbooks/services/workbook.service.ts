@@ -1,20 +1,16 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { HelperStringService } from 'src/common/helper/services/helper.string.service';
 
 import {
-    IDatabaseCreateOptions,
-    IDatabaseSoftDeleteOptions,
-    IDatabaseExistOptions,
     IDatabaseFindAllOptions,
     IDatabaseFindOneOptions,
     IDatabaseOptions,
 } from 'src/common/database/interfaces/database.interface';
 import { IWorkbookService } from '../interfaces/workbook.service.interface';
-import { IWorkbookCreate } from '../interfaces/workbook.interface';
+import { IWorkbookEntity } from '../interfaces/workbook.interface';
 import { WorkbookEntity } from '../repository/entities/workbook.entity';
-import { HelperDateService } from 'src/common/helper/services/helper.date.service';
 import { WorkbookRepository } from '../repository/repositories/workbook.repository';
+import { WorkbookCreateDto } from '../dtos/workbook.create.dto';
+import { WorkbookUpdatePatchDto } from '../dtos/workbook.update.dto';
 
 
 
@@ -29,13 +25,6 @@ export class WorkbookService implements IWorkbookService {
     ) {
     }
 
-    // async findAll(
-    //     find?: Record<string, any>,
-    //     options?: IDatabaseFindAllOptions
-    // ): Promise<WorkspaceEntity> {
-    //     return this.workspaceRepository.findAll<WorkspaceEntity>();
-    // }
-
     async findAll(
         find?: Record<string, any>,
         options?: IDatabaseFindAllOptions
@@ -47,21 +36,21 @@ export class WorkbookService implements IWorkbookService {
     }
 
 
-    async create<T>(
+    async create(
         {
             title,
             properties,
             worksheets,
-            workspace,
+            workspaces,
             isActive,
             user
-        }: IWorkbookCreate
+        }: WorkbookCreateDto
     ): Promise<WorkbookEntity> {
         const workbook: WorkbookEntity = new WorkbookEntity();
         workbook.title = title;
         workbook.properties = properties;
         workbook.worksheets = worksheets;
-        workbook.workspace = workspace;
+        workbook.workspaces = workspaces;
         workbook.isActive = isActive;
         workbook.createdBy = user;
         workbook.updatedBy = user;
@@ -81,11 +70,23 @@ export class WorkbookService implements IWorkbookService {
     //     );
     // }
 
+    async patch(
+        _id: string,
+        data: WorkbookUpdatePatchDto,
+        options?: IDatabaseOptions
+    ): Promise<WorkbookEntity> {
+        return this.workbookRepository.updateOneById<WorkbookUpdatePatchDto>(
+            _id,
+            data,
+            options
+        );
+    }
+
     async findOneById(
         _id: string,
         options?: IDatabaseFindOneOptions
     ): Promise<WorkbookEntity> {
-        return this.workbookRepository.findOneById<WorkbookEntity>(
+        return this.workbookRepository.findOneById<IWorkbookEntity>(
             _id,
             options
         );

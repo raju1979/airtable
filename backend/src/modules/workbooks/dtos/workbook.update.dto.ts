@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { ApiProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
+import { Exclude, Type } from 'class-transformer';
 import {
     IsString,
     IsNotEmpty,
@@ -19,35 +19,26 @@ import { ObjectId } from 'mongoose';
 
 class WorkbookProperties {
 
+    @IsOptional()
     @MinLength(4)
     readonly icon:string
 
 }
 
-class OtherWorkspaceUsersProperties {
+export class WorkbookUpdatePatchDto {
 
-    @MinLength(3)
-    readonly user: string
-
-    @IsBoolean()
-    readonly canRead: boolean
-
-    @IsBoolean()
-    readonly canEdit: boolean
-}
-
-
-export class WorkbookCreateDto {
-    @ApiProperty({
-        example: faker.internet.userName(),
-        required: true,
-    })
+    @IsOptional()
+    @Exclude()
+    _id: string
+    
+    @IsOptional()
     @IsString()
     @IsNotEmpty()
     @MaxLength(100)
     @Type(() => String)
     readonly title: string;
 
+    @IsOptional()
     @IsNotEmpty()
     @Type(() => WorkbookProperties)
     @ValidateNested()
@@ -58,18 +49,11 @@ export class WorkbookCreateDto {
     @ArrayMinSize(0)
     readonly worksheets: string[]; 
 
+    @IsOptional()
     @IsNotEmpty()
     @IsUUID('4', { each: true })
     readonly workspaces: string;
 
-    @ApiProperty({
-        description: 'List of permission',
-        example: [
-            faker.database.mongodbObjectId(),
-            faker.database.mongodbObjectId(),
-        ],
-        required: true,
-    })
     @IsOptional()
     @IsUUID('4', { each: true })
     @IsArray()
@@ -79,8 +63,7 @@ export class WorkbookCreateDto {
     @IsOptional()
     readonly user: any;
 
+    @IsOptional()
     @IsBoolean()
     readonly isActive: boolean;
 }
-
-

@@ -3,6 +3,8 @@ import { ArrayMinSize, IsBoolean, IsNotEmpty, IsOptional, IsUUID, MinLength } fr
 import { CallbackWithoutResultAndOptionalError, ObjectId } from 'mongoose';
 import { DatabaseMongoEntityAbstract } from 'src/common/database/abstracts/database.mongo-entity.abstract';
 import { DatabaseEntity } from 'src/common/database/decorators/database.decorator';
+import { PermissionEntity } from 'src/modules/permission/repository/entities/permission.entity';
+import { WorkspaceEntity } from 'src/modules/workspaces/repository/entities/workspace.entity';
 import { string } from 'yargs';
 
 export const WorkbookDatabaseName = 'workbooks';
@@ -45,10 +47,11 @@ export class WorkbookEntity extends DatabaseMongoEntityAbstract {
 
     @Prop({
         required: true,
+        _id: false,
+        type: String,
+        ref: WorkspaceEntity.name,
     })
-    @IsNotEmpty()
-    @IsUUID('4', { each: true })
-    workspace: string;
+    workspaces: string;
 
     @Prop({
         required: true,
@@ -70,6 +73,5 @@ export class WorkbookEntity extends DatabaseMongoEntityAbstract {
 export const WorkbookSchema = SchemaFactory.createForClass(WorkbookEntity);
 
 WorkbookSchema.pre('save', function (next: CallbackWithoutResultAndOptionalError) {
-    console.log('SAVING');
     next();
 });
