@@ -49,7 +49,7 @@ export class WorkbookEntity extends DatabaseMongoEntityAbstract {
         required: true,
         _id: false,
         type: String,
-        ref: WorkspaceEntity.name,
+        // ref: WorkspaceEntity.name,
     })
     workspaces: string;
 

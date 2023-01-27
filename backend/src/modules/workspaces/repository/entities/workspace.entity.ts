@@ -62,6 +62,7 @@ export class WorkspaceEntity extends DatabaseMongoEntityAbstract {
         default: [],
         _id: false,
         type: Array<string>,
+        ref: WorkbookEntity.name,
     })
     workbooks: string[];
 

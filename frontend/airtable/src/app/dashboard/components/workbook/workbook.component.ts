@@ -23,7 +23,7 @@ export class WorkbookComponent {
   }
 
   getWorkbookDetails(id: string): void {
-    this.apiService.getData(`workbooks/${id}`)
+    this.apiService.getData(`workbooks/get/${id}`)
     .subscribe(
       (res => {
         console.log(res)

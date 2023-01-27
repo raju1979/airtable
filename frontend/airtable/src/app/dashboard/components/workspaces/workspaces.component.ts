@@ -47,34 +47,40 @@ export class WorkspacesComponent {
     const newWorkbook = {
       title: faker.name.firstName(),
       worksheets: [],
-      workspace: workspace.id,
-      isActive: true
+      workspaces: workspace._id,
+      isActive: true,
+      "properties": {
+        "icon": this.getRandomIcon()
+    }
     }
     console.log(newWorkbook);
-    this.apiService.postData('workbooks', newWorkbook)
+    this.apiService.postData('workbooks/create', newWorkbook)
       .subscribe(
         res => {
           console.log(res);
-          // this.getWorkbooks();
+          this.getWorkbooks(workspace);
         }
       )
   }
 
-  getWorkbooks() {
-    this.apiService.getData('workbooks', '')
+  getWorkbooks(workspace: any) {
+    console.log('wordsafdds', workspace)
+    this.apiService.getData(`workspaces/get/${workspace._id}`, '')
       .subscribe(
         res => {
-          
+          workspace.workbooks = [];
+          console.log('ress ', res)
           const tempWorkbooksObj = {};
-          this.workspaces.map(item => item.workbooks = [])
-          res.map((workbook: any) => {
-            const worskspace = workbook.workspace
+          // this.workspaces.map(item => item.workbooks = [])
+          // res.data.map((workbook: any) => {
+          //   const worskspace = workbook.workspace
             
-            const tempWorkspace  = this.workspaces.filter(item => item.id === worskspace)[0];
-            console.log(tempWorkspace)
-            tempWorkspace.workbooks.push(workbook)
-          })
+          //   const tempWorkspace  = this.workspaces.filter(item => item.id === worskspace)[0];
+          //   console.log(tempWorkspace)
+          //   workspace.workbooks.push(workbook)
+          // })
           console.log(this.workspaces)
+          workspace.workbooks = [...res.workbooks]
         }
       )
   }
@@ -90,7 +96,7 @@ export class WorkspacesComponent {
       'workbooks': [],
       'isActive': true
     }
-    this.apiService.postData('workspaces', newWorkspace)
+    this.apiService.postData('workspaces/create', newWorkspace)
       .subscribe(
         res => {
           console.log(res);

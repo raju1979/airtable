@@ -72,6 +72,7 @@ export class WorkspacesController {
                     skip: skip,
                 },
                 sort,
+                join: true
             }
         );
 
@@ -160,10 +161,9 @@ export class WorkspacesController {
     @AuthJwtAccessProtected()
     @Get('/get/:workspace') 
     async get(@GetWorkspace() workspaceData: IWorkspaceEntity, @Param('workspace') id): Promise<IResponse> {
-        console.log('+++++++++-----', workspaceData);
         let workspace;
         try {
-            workspace = await this.workservice.findOneById(id);
+            workspace = await this.workservice.findOneById(id, {join: true});
         } catch (err: any) {
             throw new InternalServerErrorException({
                 statusCode: ENUM_ERROR_STATUS_CODE_ERROR.ERROR_UNKNOWN,

@@ -16,13 +16,11 @@ export class WorkspaceRepository
         @DatabaseModel(WorkspaceEntity.name)
         private readonly workspaceModel: Model<WorkspaceEntity>
     ) {
-        super(workspaceModel, {
-            path: 'workbook',
-            populate: {
+        super(workspaceModel, [{            
                 path: 'workbooks',
                 match: '_id',
                 model: WorkbookEntity.name
             }
-        });
+        ]);
     }
 }

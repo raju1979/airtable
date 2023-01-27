@@ -35,7 +35,7 @@ export class WorkbooksController {
     constructor(
         private readonly paginationService: PaginationService,
         private readonly workbookService: WorkbookService,
-        private readonly workservice: WorkspaceService
+        private readonly workspaceService: WorkspaceService
     ) { }
 
     @Get('/list')
@@ -93,7 +93,8 @@ export class WorkbooksController {
     ): Promise<void> {
         let newWorkbook: any;
         try {
-            const workbookWorkspace = await this.workservice.findOneById(workspaces);
+            const workbookWorkspace = await this.workspaceService.findOneById(workspaces);
+            console.log('workspace ', workbookWorkspace);
             if (workbookWorkspace) {
                 const createPayload: any = {
                     title,
@@ -104,6 +105,8 @@ export class WorkbooksController {
                     user: user.username,
                 };
                 newWorkbook = await this.workbookService.create(createPayload);
+                workbookWorkspace.workbooks = [...workbookWorkspace.workbooks, newWorkbook._id];
+                this.workspaceService.patch(workbookWorkspace._id, workbookWorkspace)
             } else {
                 throw new Error('Workspace does not Exists')
             }
